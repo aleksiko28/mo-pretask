@@ -1,0 +1,43 @@
+.requests {
+  background: white;
+  height: calc(100% - 61px);
+  width: 85%;
+  position: absolute;
+  right: 0;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  height: 70px;
+  background: white;
+  border-style: none none solid none;
+  border-width: 1px;
+  border-color: lightgrey;
+}
+
+.left-top-bar {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0px 30px;
+}
+
+.right-top-bar {
+  display: flex;
+  margin: 0px 30px;
+}
+
+.first-text {
+  color: grey;
+  font-weight: regular;
+  font-size: 1.4em;
+  margin: 10px;
+}
+
+.second-text {
+  color: grey;
+  font-weight: regular;
+  font-size: 0.9em;
+  margin: 10px;
+}

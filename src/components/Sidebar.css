@@ -1,0 +1,33 @@
+.sidebar {
+  background: rgb(241, 241, 241);
+  height: calc(100% - 61px);
+  width: 15%;
+  position: absolute;
+  left: 0;
+  border-style: none solid none none;
+  border-width: 1px;
+  border-color: grey;
+}
+
+.sidebar-container {
+}
+
+.filter-text {
+  color: grey;
+  font-weight: bold;
+  font-size: 1em;
+}
+
+.filter-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  margin: 0 5%;
+}
+
+.search-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0% 5%;
+}

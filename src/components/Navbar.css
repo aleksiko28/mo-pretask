@@ -1,0 +1,48 @@
+body {
+  font-family: jungkaregular, sans-serif;
+}
+
+.navbar {
+  background: white;
+  height: 60px;
+  font-size: 1.2rem;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  border-style: none none solid none;
+  border-width: 1px;
+  border-color: lightgrey;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.logo-and-text {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+}
+
+.navbar-logo {
+  width: 100px;
+  margin: 0px 30px;
+  text-decoration: none;
+  display: flex;
+}
+
+.top-text {
+  color: grey;
+  font-weight: bold;
+}
+
+.account {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  font-weight: lighter;
+  margin: 0px 30px;
+  color: grey;
+}
