@@ -4,6 +4,8 @@ import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import Button from "@material-ui/core/Button";
 import Divider from "@material-ui/core/Divider";
 import { makeStyles } from "@material-ui/core/styles";
+import Popup from "./RequestPopup.js";
+import RequestForm from "./RequestForm.js";
 
 const useStyles = makeStyles(theme => ({
   button: {
@@ -16,6 +18,7 @@ const useStyles = makeStyles(theme => ({
 
 function Requests() {
   const classes = useStyles();
+  const [openPopup, setOpenPopup] = React.useState(false);
 
   return (
     <div className="requests">
@@ -30,10 +33,14 @@ function Requests() {
             variant="contained"
             color="primary"
             className={classes.button}
+            onClick={() => setOpenPopup(true)}
             disableElevation
           >
             New service request
           </Button>
+          <Popup openPopup={openPopup} setOpenPopup={setOpenPopup}>
+            <RequestForm />
+          </Popup>
         </div>
       </div>
     </div>
