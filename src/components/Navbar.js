@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./Navbar.css";
 import AccountBoxIcon from "@material-ui/icons/AccountBox";
 import Button from "@material-ui/core/Button";
@@ -27,7 +27,10 @@ function Navbar() {
         <div className="navbar-container">
           <div className="logo-and-text">
             <div className="navbar-logo">
-              <img src={process.env.PUBLIC_URL + "/Outotec-Logo.svg"} />
+              <img
+                alt="logo"
+                src={process.env.PUBLIC_URL + "/Outotec-Logo.svg"}
+              />
             </div>
             <div className="top-text">
               <p>Service Center</p>

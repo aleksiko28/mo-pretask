@@ -24,10 +24,6 @@ const useStyles = makeStyles(theme => ({
   arrow: {
     margin: theme.spacing(1)
   },
-  button: {
-    margin: theme.spacing(1),
-    textTransform: "none"
-  },
   icon: {
     color: "#454545",
     fontSize: "30px"
@@ -55,13 +51,11 @@ const statuses = [{ value: "Open" }, { value: "Closed" }];
 
 function Requests() {
   const classes = useStyles();
-  const [openPopup, setOpenPopup] = React.useState(false);
   const [open, setOpen] = React.useState(false);
   const vertical = "top";
   const horizontal = "center";
   const [requests, setRequests] = React.useState([]);
   const [query, setQuery] = React.useState([]);
-  const [isFresh, setIsFresh] = React.useState(true);
   const [state, setState] = React.useState({
     requestType: "Any",
     priority: "Any",
@@ -89,7 +83,7 @@ function Requests() {
 
   const handleSearch = e => {
     setSearch(e);
-    if (e != "")
+    if (e !== "")
       setQuery(
         requests.filter(request =>
           request.name.toUpperCase().includes(e.toUpperCase())
@@ -118,6 +112,7 @@ function Requests() {
               className={classes.textField}
               id="standard-search"
               label="Search..."
+              variant="outlined"
               type="search"
               value={search}
               onChange={e => {
@@ -133,12 +128,12 @@ function Requests() {
                 )
               }}
             />
-
             <TextField
               className={classes.textField}
               id="request-types"
               select
               label="Request types"
+              variant="outlined"
               value={state.requestType}
               onChange={handleRequest}
             >
@@ -148,12 +143,12 @@ function Requests() {
                 </MenuItem>
               ))}
             </TextField>
-
             <TextField
               className={classes.textField}
               id="priority"
               select
               label="Priority"
+              variant="outlined"
               value={state.priority}
               onChange={handlePriority}
             >
@@ -163,12 +158,12 @@ function Requests() {
                 </MenuItem>
               ))}
             </TextField>
-
             <TextField
               className={classes.textField}
               id="stat"
               select
               label="Status"
+              variant="outlined"
               value={state.status}
               onChange={handleStatus}
             >
@@ -181,6 +176,7 @@ function Requests() {
           </div>
         </div>
       </div>
+
       <div className="top-bar">
         <div className="left-top-bar">
           <ArrowBackIcon color="primary" className={classes.arrow} />
@@ -191,39 +187,42 @@ function Requests() {
           <Popup snackbar={setOpen}></Popup>
         </div>
       </div>
+
       <div className="content">
         <table>
-          <tr>
-            <th>Created</th>
-            <th>Request name</th>
-            <th>Request type</th>
-            <th>ID</th>
-            <th>Description</th>
-            <th>Priority</th>
-            <th>Status</th>
-          </tr>
-          {query.map(request => (
-            <tr key={request.id}>
-              <td>{request.created}</td>
-              <td>{request.name}</td>
-              <td>{request.type}</td>
-              <td>{request.id}</td>
-              <td>{request.desc}</td>
-              <td>{request.priority}</td>
-              <td>{request.status}</td>
+          <tbody>
+            <tr>
+              <th>Created</th>
+              <th>Request name</th>
+              <th>Request type</th>
+              <th>ID</th>
+              <th>Description</th>
+              <th>Priority</th>
+              <th>Status</th>
             </tr>
-          ))}
+            {query.map(request => (
+              <tr key={request.id}>
+                <td>{request.created}</td>
+                <td>{request.name}</td>
+                <td>{request.type}</td>
+                <td>{request.id}</td>
+                <td>{request.desc}</td>
+                <td>{request.priority}</td>
+                <td>{request.status}</td>
+              </tr>
+            ))}
+          </tbody>
         </table>
 
         <Snackbar
           anchorOrigin={{ vertical, horizontal }}
           key={vertical + horizontal}
           open={open}
-          autoHideDuration={6000}
+          autoHideDuration={5000}
           onClose={handleClose}
         >
           <Alert onClose={handleClose} severity="success">
-            Request created successfully.
+            Request created successfully. Please refresh to see the new request.
           </Alert>
         </Snackbar>
       </div>

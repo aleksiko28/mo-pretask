@@ -1,6 +1,5 @@
 import "./App.css";
 import Navbar from "./components/Navbar";
-import Sidebar from "./components/Sidebar";
 import Requests from "./components/Requests";
 import { createMuiTheme } from "@material-ui/core/styles";
 import { ThemeProvider as MuiThemeProvider } from "@material-ui/core/styles";

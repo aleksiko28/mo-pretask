@@ -99,7 +99,8 @@ th {
 .filter-text {
   color: grey;
   font-weight: bold;
-  font-size: 1em;
+  font-size: 1.2em;
+  font-family: "Segoe UI";
 }
 
 .filter-container {
