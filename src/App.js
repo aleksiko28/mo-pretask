@@ -29,7 +29,6 @@ function App() {
       <div className="App">
         <Navbar />
         <Requests />
-        <Sidebar />
       </div>
     </MuiThemeProvider>
   );

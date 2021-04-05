@@ -1,7 +1,7 @@
 .requests {
   background: white;
   height: calc(100% - 61px);
-  width: 85%;
+  width: 100%;
   position: absolute;
   right: 0;
 }
@@ -20,12 +20,12 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  margin: 0px 30px;
+  margin: 0px 16%;
 }
 
 .right-top-bar {
   display: flex;
-  margin: 0px 30px;
+  margin: 0px 1%;
   align-items: center;
 }
 
@@ -56,12 +56,62 @@ td {
 table,
 tbody {
   border-collapse: collapse;
-  width: 95%;
-  margin: 2% auto;
-  font-family: "roboto";
+  width: 80%;
+  margin: 2% 17%;
+  font-family: "Segoe UI";
+}
+
+table {
+  table-layout: fixed;
 }
 
 th,
 td {
-  padding: 15px;
+  padding: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+td {
+  color: #414141;
+}
+
+th {
+  font-weight: 700;
+}
+
+.popup {
+  width: 100%;
+}
+
+.sidebar {
+  background: rgb(241, 241, 241);
+  height: 100%;
+  width: 15%;
+  position: absolute;
+  left: 0;
+  border-style: none solid none none;
+  border-width: 1px;
+  border-color: grey;
+}
+
+.filter-text {
+  color: grey;
+  font-weight: bold;
+  font-size: 1em;
+}
+
+.filter-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  margin: 0 5%;
+}
+
+.search-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 5%;
 }

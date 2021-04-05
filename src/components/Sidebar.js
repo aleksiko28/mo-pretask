@@ -4,6 +4,9 @@ import FirstPageIcon from "@material-ui/icons/FirstPage";
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import MenuItem from "@material-ui/core/MenuItem";
+import InputAdornment from "@material-ui/core/InputAdornment";
+import SearchIcon from "@material-ui/icons/Search";
+import IconButton from "@material-ui/core/IconButton";
 
 const useStyles = makeStyles(theme => ({
   button: {
@@ -42,6 +45,7 @@ function Sidebar() {
     priority: "Any",
     status: "Open"
   });
+  const [search, setSearch] = React.useState("");
 
   const handleRequest = event =>
     setState({ ...state, requestType: event.target.value });
@@ -63,6 +67,19 @@ function Sidebar() {
             id="standard-search"
             label="Search..."
             type="search"
+            value={search}
+            onChange={e => {
+              setSearch(e.target.value);
+            }}
+            InputProps={{
+              endAdornment: (
+                <InputAdornment>
+                  <IconButton>
+                    <SearchIcon />
+                  </IconButton>
+                </InputAdornment>
+              )
+            }}
           />
 
           <TextField

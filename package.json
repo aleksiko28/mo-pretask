@@ -19,6 +19,7 @@
     "react-json-table": "^0.1.1",
     "react-scripts": "4.0.3",
     "react-table": "^7.6.3",
+    "table-sort-js": "^1.1.6-d",
     "web-vitals": "^1.0.1"
   },
   "scripts": {

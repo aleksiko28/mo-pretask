@@ -29,24 +29,18 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const requestTypes = [
-  { value: "Any" },
   { value: "Audit" },
   { value: "Maintenance" },
   { value: "Break/Fix Repair" }
 ];
 
-const priorities = [
-  { value: "High" },
-  { value: "Medium" },
-  { value: "Night" },
-  { value: "Any" }
-];
+const priorities = [{ value: "High" }, { value: "Medium" }, { value: "Night" }];
 
 export default function FormDialog(props) {
   const [open, setOpen] = React.useState(false);
   const [name, setName] = React.useState("");
   const [type, setType] = React.useState("");
-  const [id, setId] = React.useState();
+  const [id, setId] = React.useState("");
   const [desc, setDesc] = React.useState("");
   const [priority, setPriority] = React.useState("");
   const classes = useStyles();
@@ -61,31 +55,34 @@ export default function FormDialog(props) {
   };
 
   const handleSubmit = () => {
-    var nowDate = new Date();
-    var created =
-      nowDate.getDate() +
-      "." +
-      (nowDate.getMonth() + 1) +
-      "." +
-      nowDate.getFullYear() +
-      " " +
-      nowDate.getHours() +
-      "." +
-      (nowDate.getMinutes() < 10 ? "0" : "") +
-      nowDate.getMinutes();
-    var status = "Open";
-    const db = firebase.firestore();
-    db.collection("requests").add({
-      created,
-      name,
-      type,
-      id,
-      desc,
-      priority,
-      status
-    });
-    setOpen(false);
-    snackbar(true);
+    if (name != "" && type != "" && id != "" && priority != "") {
+      var nowDate = new Date();
+      var created =
+        nowDate.getDate() +
+        "." +
+        (nowDate.getMonth() + 1) +
+        "." +
+        nowDate.getFullYear() +
+        " " +
+        nowDate.getHours() +
+        "." +
+        (nowDate.getMinutes() < 10 ? "0" : "") +
+        nowDate.getMinutes();
+      var status = "Open";
+      const db = firebase.firestore();
+      db.collection("requests").add({
+        created,
+        name,
+        type,
+        id,
+        desc,
+        priority,
+        status
+      });
+      setOpen(false);
+      snackbar(true);
+    } else {
+    }
   };
 
   return (
@@ -94,6 +91,8 @@ export default function FormDialog(props) {
         New service request
       </Button>
       <Dialog
+        fullWidth
+        maxWidth="xs"
         open={open}
         onClose={handleClose}
         roboto-labelledby="form-dialog-title"
