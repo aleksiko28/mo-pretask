@@ -9,9 +9,6 @@
   border-color: grey;
 }
 
-.sidebar-container {
-}
-
 .filter-text {
   color: grey;
   font-weight: bold;
@@ -29,5 +26,5 @@
 .search-container {
   display: flex;
   flex-direction: column;
-  margin: 0% 5%;
+  margin: 0 5%;
 }

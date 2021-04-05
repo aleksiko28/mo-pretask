@@ -26,6 +26,7 @@
 .right-top-bar {
   display: flex;
   margin: 0px 30px;
+  align-items: center;
 }
 
 .first-text {
@@ -40,4 +41,27 @@
   font-weight: regular;
   font-size: 0.9em;
   margin: 10px;
+}
+
+th {
+  border-bottom: 1px solid grey;
+}
+
+table,
+td {
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+table,
+tbody {
+  border-collapse: collapse;
+  width: 95%;
+  margin: 2% auto;
+  font-family: "roboto";
+}
+
+th,
+td {
+  padding: 15px;
 }

@@ -15,7 +15,7 @@ const useStyles = makeStyles(theme => ({
     fontSize: "30px"
   },
   textField: {
-    margin: "3% 0%"
+    margin: "5% 0%"
   }
 }));
 

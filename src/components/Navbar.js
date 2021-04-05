@@ -42,7 +42,6 @@ function Navbar() {
             />
             <Button
               className={classes.button}
-              variant="outlined"
               startIcon={<AccountBoxIcon className={classes.icon} />}
             >
               Username
